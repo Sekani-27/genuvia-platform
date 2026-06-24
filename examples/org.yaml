@@ -1,17 +1,25 @@
----
-# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-user
 apiVersion: backstage.io/v1alpha1
 kind: User
 metadata:
-  name: guest
+  name: ntando-miya
 spec:
-  memberOf: [guests]
+  profile:
+    displayName: Ntando Miya
+    email: ntandomiya97@gmail.com
+  memberOf: [genuvia]
 ---
-# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-group
 apiVersion: backstage.io/v1alpha1
 kind: Group
 metadata:
-  name: guests
+  name: genuvia
 spec:
-  type: team
+  type: organization
   children: []
+---
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: genuvia
+  description: Genuvia Intelligence Infrastructure
+spec:
+  owner: user:ntando-miya
