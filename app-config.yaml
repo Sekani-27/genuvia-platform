@@ -7,6 +7,7 @@ app:
 
   extensions:
     # Configure the catalog index page to be the root page, this is normally mounted on /catalog
+    - entity-content:kubernetes/entity
     - page:catalog:
         config:
           path: /
@@ -22,6 +23,8 @@ backend:
   #   keys:
   #     - secret: ${BACKEND_SECRET}
   baseUrl: http://localhost:7007
+  auth:
+    dangerouslyDisableDefaultAuthPolicy: true
   listen:
     port: 7007
     # Uncomment the following host directive to bind to specific interfaces
@@ -131,7 +134,6 @@ catalog:
     #   rules:
     #     - allow: [User, Group]
 
-kubernetes:
   # see https://backstage.io/docs/features/kubernetes/configuration for kubernetes configuration options
 
 # see https://backstage.io/docs/permissions/getting-started for more on the permission framework
@@ -143,3 +145,18 @@ permission:
 mcpActions:
   name: 'My Company Backstage' # defaults to "backstage"
   description: 'Tools for managing your software catalog, creating new services from templates, and exploring your developer portal' # optional
+
+kubernetes:
+  serviceLocatorMethod:
+    type: 'multiTenant'
+  clusterLocatorMethods:
+    - type: 'config'
+      clusters:
+        - url: https://0.0.0.0:39599
+          name: genuvia-local
+          authProvider: 'serviceAccount'
+          skipTLSVerify: true
+          skipMetricsLookup: false
+          serviceAccountToken: ${K8S_TOKEN}
+
+

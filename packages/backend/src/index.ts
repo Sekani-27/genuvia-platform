@@ -15,4 +15,6 @@ backend.add(import('@backstage/plugin-search-backend-module-catalog'));
 backend.add(import('@backstage/plugin-notifications-backend'));
 backend.add(import('@backstage/plugin-signals-backend'));
 
+
+backend.add(import('@backstage/plugin-kubernetes-backend'));
 backend.start();
