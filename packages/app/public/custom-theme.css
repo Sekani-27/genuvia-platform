@@ -1,0 +1,32 @@
+:root {
+  --genuvia-bg: #0d0d1a;
+  --genuvia-paper: #13132a;
+  --genuvia-teal: #7df3e1;
+  --genuvia-sidebar: #0a0a18;
+}
+
+body {
+  background-color: #0d0d1a !important;
+}
+
+/* Sidebar */
+nav[class*="MuiDrawer"] {
+  background-color: #0a0a18 !important;
+}
+
+/* Cards/Paper */
+div[class*="MuiPaper"] {
+  background-color: #13132a !important;
+  border: 1px solid rgba(125, 243, 225, 0.08) !important;
+}
+
+/* Primary color */
+[class*="MuiButton-containedPrimary"] {
+  background-color: #7df3e1 !important;
+  color: #0a0a1a !important;
+}
+
+/* Links */
+a {
+  color: #7df3e1 !important;
+}

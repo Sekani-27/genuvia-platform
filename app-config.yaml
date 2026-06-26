@@ -160,3 +160,9 @@ kubernetes:
           serviceAccountToken: ${K8S_TOKEN}
 
 
+
+app:
+  themes:
+    - id: genuvia
+      title: Genuvia
+      variant: dark
