@@ -8,6 +8,7 @@ app:
   extensions:
     # Configure the catalog index page to be the root page, this is normally mounted on /catalog
     - entity-content:kubernetes/entity
+    - entity-card:genuvia-decisions/genuvia-decisions
     - page:catalog:
         config:
           path: /
