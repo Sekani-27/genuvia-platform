@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: genuvia-edge
+  namespace: default
+  labels:
+    app: genuvia-edge
+    backstage.io/kubernetes-id: genuvia-edge
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: genuvia-edge
+  template:
+    metadata:
+      labels:
+        app: genuvia-edge
+        backstage.io/kubernetes-id: genuvia-edge
+    spec:
+      containers:
+        - name: genuvia-edge
+          image: nginx:alpine
+          ports:
+            - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: genuvia-edge
+  namespace: default
+  labels:
+    backstage.io/kubernetes-id: genuvia-edge
+spec:
+  selector:
+    app: genuvia-edge
+  ports:
+    - port: 80
+      targetPort: 80
