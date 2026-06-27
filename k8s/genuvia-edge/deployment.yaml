@@ -7,7 +7,7 @@ metadata:
     app: genuvia-edge
     backstage.io/kubernetes-id: genuvia-edge
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: genuvia-edge
