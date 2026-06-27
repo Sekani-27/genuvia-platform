@@ -123,6 +123,10 @@ catalog:
       target: ../../examples/org.yaml
       rules:
         - allow: [User, Group]
+    - type: url
+      target: https://github.com/Sekani-27/Nexara/blob/main/catalog-info.yaml
+    - type: url
+      target: https://github.com/Sekani-27/genuvia-core/blob/main/catalog-info.yaml
 
     ## Uncomment these lines to add more example data
     # - type: url
@@ -152,17 +156,22 @@ kubernetes:
   clusterLocatorMethods:
     - type: 'config'
       clusters:
-        - url: https://0.0.0.0:39599
+        - url: https://0.0.0.0:40349
           name: genuvia-local
           authProvider: 'serviceAccount'
           skipTLSVerify: true
           skipMetricsLookup: false
           serviceAccountToken: ${K8S_TOKEN}
-
-
-
-app:
-  themes:
-    - id: genuvia
       title: Genuvia
       variant: dark
+
+argocd:
+  username: admin
+  password: xC8n58NQKIUczVlc
+  appLocatorMethods:
+    - type: 'config'
+      instances:
+        - name: argocd
+          url: https://127.0.0.1:8085
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcmdvY2QiLCJzdWIiOiJhZG1pbjpsb2dpbiIsImV4cCI6MTc4MjY4NDc1MiwibmJmIjoxNzgyNTk4MzUyLCJpYXQiOjE3ODI1OTgzNTIsImp0aSI6ImZjNTBjMjJlLTE1ZDAtNDIwZC04NmE3LTg0NjA1OTc2MjBlMSJ9.gCUsGWzRo0oEFpKMeojV1ufw1_FoPM-aE38LI0UEZss
+          insecure: true

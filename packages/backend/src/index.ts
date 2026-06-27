@@ -17,4 +17,5 @@ backend.add(import('@backstage/plugin-signals-backend'));
 
 
 backend.add(import('@backstage/plugin-kubernetes-backend'));
+backend.add(import('@roadiehq/backstage-plugin-argo-cd-backend'));
 backend.start();
