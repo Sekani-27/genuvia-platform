@@ -22,7 +22,6 @@ spec:
           title: Service Name
           type: string
           description: Name of the new service (e.g. genuvia-signals)
-          pattern: '^[a-z0-9-]+$'
         description:
           title: Description
           type: string
@@ -49,7 +48,7 @@ spec:
       name: Fetch Base Template
       action: fetch:template
       input:
-        url: ./content
+        url: ./skeleton
         values:
           name: ${{ parameters.name }}
           description: ${{ parameters.description }}
@@ -63,6 +62,7 @@ spec:
         description: ${{ parameters.description }}
         repoUrl: ${{ parameters.repoUrl }}
         defaultBranch: main
+        token: ${{ secrets.USER_OAUTH_TOKEN }}
 
     - id: register
       name: Register in Catalog
