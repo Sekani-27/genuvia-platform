@@ -8,7 +8,7 @@
 
 ## Demo
 
-> 📹 *[Demo video link — coming soon]*
+> 📹 [Watch the full platform demo on YouTube](https://youtu.be/8kmGtT4-uE4)
 
 ---
 
