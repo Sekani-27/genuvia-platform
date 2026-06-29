@@ -128,6 +128,10 @@ catalog:
       target: https://github.com/Sekani-27/Nexara/blob/main/catalog-info.yaml
     - type: url
       target: https://github.com/Sekani-27/genuvia-core/blob/main/catalog-info.yaml
+    - type: file
+      target: ../../templates/new-service/template.yaml
+      rules:
+        - allow: [Template]
 
     ## Uncomment these lines to add more example data
     # - type: url
@@ -177,6 +181,3 @@ argocd:
           token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcmdvY2QiLCJzdWIiOiJhZG1pbjpsb2dpbiIsImV4cCI6MTc4MjY4NDc1MiwibmJmIjoxNzgyNTk4MzUyLCJpYXQiOjE3ODI1OTgzNTIsImp0aSI6ImZjNTBjMjJlLTE1ZDAtNDIwZC04NmE3LTg0NjA1OTc2MjBlMSJ9.gCUsGWzRo0oEFpKMeojV1ufw1_FoPM-aE38LI0UEZss
           insecure: true
     - type: file
-      target: ../../templates/new-service/template.yaml
-      rules:
-        - allow: [Template]

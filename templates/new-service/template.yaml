@@ -9,9 +9,8 @@ metadata:
     - fastapi
     - kubernetes
 spec:
-  owner: user:ntando-miya
+  owner: user:default/ntando-miya
   type: service
-
   parameters:
     - title: Service Details
       required:
@@ -30,7 +29,6 @@ spec:
           title: Owner
           type: string
           default: ntando-miya
-
     - title: Choose a Repository Location
       required:
         - repoUrl
@@ -42,7 +40,6 @@ spec:
           ui:options:
             allowedHosts:
               - github.com
-
   steps:
     - id: fetch-base
       name: Fetch Base Template
@@ -53,24 +50,19 @@ spec:
           name: ${{ parameters.name }}
           description: ${{ parameters.description }}
           owner: ${{ parameters.owner }}
-
     - id: publish
       name: Publish to GitHub
       action: publish:github
       input:
-        allowedHosts: ['github.com']
         description: ${{ parameters.description }}
         repoUrl: ${{ parameters.repoUrl }}
         defaultBranch: main
-        token: ${{ secrets.USER_OAUTH_TOKEN }}
-
     - id: register
       name: Register in Catalog
       action: catalog:register
       input:
         repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }}
         catalogInfoPath: '/catalog-info.yaml'
-
   output:
     links:
       - title: Repository

@@ -62,5 +62,10 @@
       "prettier --write"
     ]
   },
-  "packageManager": "yarn@4.13.0"
+  "packageManager": "yarn@4.13.0",
+  "dependencies": {
+    "@backstage/plugin-scaffolder-backend": "4.0.1",
+    "@backstage/plugin-scaffolder-backend-module-github": "^0.9.10",
+    "isolated-vm": "4.7.2"
+  }
 }
